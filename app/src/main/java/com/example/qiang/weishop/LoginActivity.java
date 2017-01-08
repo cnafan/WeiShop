@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         dotViews = new ImageView[pageview.size()];
         for (int i = 0; i < pageview.size(); i++) {
             dotView = new ImageView(LoginActivity.this);
-            dotView.setLayoutParams(new ViewGroup.LayoutParams(50, 25));
+            dotView.setLayoutParams(new ViewGroup.LayoutParams(55, 25));
             dotView.setPadding(0, 0, 0, 0);
             dotViews[i] = dotView;
 

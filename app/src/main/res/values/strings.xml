@@ -2,5 +2,13 @@
     <string name="app_name">WeiShop</string>
     <string name="sign_up">注册</string>
     <string name="log_in">登录</string>
-    <string name="wechat_login">微信登陆</string>
+    <string name="wechat_login">微信登录</string>
+
+
+    <string name="img1_title">5000万卖家</string>
+    <string name="img1_sum">5千万卖家的共同选择</string>
+    <string name="img2_title">微信中点亮微店</string>
+    <string name="img2_sum">点微信头像，逛我的微店</string>
+    <string name="img3_title">免费开店</string>
+    <string name="img3_sum">费用全免，58秒闪电开店</string>
 </resources>
