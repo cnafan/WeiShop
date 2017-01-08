@@ -1,5 +1,6 @@
 package com.example.qiang.weishop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -8,11 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     String TAG = "qiang";
 
@@ -22,6 +24,10 @@ public class LoginActivity extends AppCompatActivity {
     private ViewGroup group;
     private ImageView dotView;
     private ImageView[] dotViews;
+
+    private Button button_login;
+    private Button button_signup;
+
 
     int login_items[] = {R.layout.login_item1, R.layout.login_item2, R.layout.login_item3};
 
@@ -39,8 +45,6 @@ public class LoginActivity extends AppCompatActivity {
             pageview.add(inflater.inflate(login_items[i], null));
 
         }
-        Log.d(TAG, "pageview:" + pageview.size());
-
         group = (ViewGroup) findViewById(R.id.viewgroup);
         dotViews = new ImageView[pageview.size()];
         for (int i = 0; i < pageview.size(); i++) {
@@ -58,8 +62,10 @@ public class LoginActivity extends AppCompatActivity {
             group.addView(dotViews[i]);
         }
 
-        Log.d(TAG, "dotViews:" + dotViews.length);
-
+        button_login=(Button)findViewById(R.id.log_in);
+        button_login.setOnClickListener(this);
+        button_signup=(Button)findViewById(R.id.sign_up);
+        button_signup.setOnClickListener(this);
 
         //数据适配器
         PagerAdapter mPagerAdapter = new PagerAdapter() {
@@ -100,6 +106,19 @@ public class LoginActivity extends AppCompatActivity {
         viewPager.setOnPageChangeListener(new MyListener());
         //绑定监听事件
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.log_in:
+                startActivity(new Intent(LoginActivity.this,LoginMainActivity.class));
+                break;
+            case R.id.sign_up:
+                break;
+            default:
+                break;
+        }
     }
 
     class MyListener implements ViewPager.OnPageChangeListener {
