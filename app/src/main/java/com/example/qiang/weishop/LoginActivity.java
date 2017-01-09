@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
-    String TAG = "qiang";
+  static   String TAG = "qiang";
 
     private ViewPager viewPager;
     private ArrayList<View> pageview;

@@ -16,4 +16,5 @@
     <string name="password_hint">6–16位登录密码</string>
     <string name="phone_number">手机号</string>
     <string name="password">密码</string>
+    <string name="forgot">忘记密码</string>
 </resources>

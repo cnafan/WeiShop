@@ -14,11 +14,20 @@ import android.widget.EditText;
 
 public class LoginMainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    String TAG = "qiang";
     private Button local;
     private EditText phone_sum;
     private EditText password_sum;
     private Button log_in_main;
 
+
+    void initial() {
+        local = (Button) findViewById(R.id.local_sum);
+
+        phone_sum = (EditText) findViewById(R.id.phone_sum);
+        password_sum = (EditText) findViewById(R.id.password_sum);
+        log_in_main = (Button) findViewById(R.id.log_in_main);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +75,8 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 // TODO Auto-generated method stub
-                int len_phone = s.length();
-                int len_password = password_sum.getText().length();
+                int len_password = s.length();
+                int  len_phone= phone_sum.getText().length();
                 if (len_password > 0 && len_phone > 0) {
                     log_in_main.setBackgroundResource(R.drawable.shape_dark);
                     log_in_main.setTextColor((Color.parseColor("#FFFFFF")));
@@ -92,13 +101,6 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         });
     }
 
-    void initial() {
-        local = (Button) findViewById(R.id.local_sum);
-
-        phone_sum = (EditText) findViewById(R.id.phone_sum);
-        password_sum = (EditText) findViewById(R.id.password_sum);
-        log_in_main = (Button) findViewById(R.id.log_in_main);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -118,4 +120,6 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+
 }
