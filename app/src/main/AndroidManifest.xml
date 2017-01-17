@@ -27,9 +27,17 @@
         <activity
             android:name=".LoginMainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".CountryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ForgotPwdActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BaseWebViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

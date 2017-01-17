@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_login_main"
+    android:id="@+id/activity_sign_up"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.qiang.weishop.LoginMainActivity">
+    tools:context="com.example.qiang.weishop.SignUpActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/log_in"
+            android:text="@string/sign_up"
             android:textColor="@color/white" />
     </android.support.v7.widget.Toolbar>
 
@@ -37,14 +37,14 @@
             android:paddingTop="10dp">
 
             <TextView
-                android:textSize="16sp"
                 android:id="@+id/local_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="10dp"
                 android:text="@string/local_title"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/local_sum"
@@ -70,14 +70,14 @@
             android:paddingTop="10dp">
 
             <TextView
-                android:textSize="16sp"
                 android:id="@+id/phone_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="10dp"
                 android:text="@string/phone_number"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <com.example.qiang.weishop.EdittextWithDel
                 android:id="@+id/phone_sum"
@@ -96,58 +96,52 @@
             android:layout_height="2dp"
             android:background="#ECECEC" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:textSize="16sp"
-                android:id="@+id/password_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="20dp"
-                android:text="@string/password"
-                android:textColor="#000000" />
-
-            <com.example.qiang.weishop.EdittextWithDel
-                android:id="@+id/password_sum"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:background="@null"
-                android:hint="@string/password_hint"
-                android:inputType="textPassword" />
-
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/password_divi"
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="#ECECEC" />
         <Button
             android:id="@+id/log_in_main"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#F6D8DB"
-            android:background="@drawable/shape_light"
-            android:text="@string/log_in"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/forgot_password"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="@string/forgot"
-            android:layout_gravity="right"
-            android:textSize="14sp"
-            android:textColor="#4384D8"
+            android:background="@drawable/shape_light"
+            android:text="@string/next_step"
+            android:textColor="#F6D8DB"
+            android:textSize="16sp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_agree"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/service_xieyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_xieyi"
+                android:textColor="@color/blue"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/and"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/manager_guifan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/manager_guifan"
+                android:textColor="@color/blue"
+                android:textSize="10sp" />
+
+        </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

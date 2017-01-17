@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -117,12 +116,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         });
         //忘记密码
         textView_forgot.setClickable(true);
-        textView_forgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v, "d", Snackbar.LENGTH_SHORT).show();
-            }
-        });
+        textView_forgot.setOnClickListener(this);
 
         //直接保存在默认内置存储内
         //用Activity.openOrCreateDatabase实现
@@ -189,6 +183,9 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.local_sum:
                 startActivityForResult(new Intent(LoginMainActivity.this, CountryActivity.class), 0);
+                break;
+            case R.id.forgot_password:
+                startActivity(new Intent(LoginMainActivity.this,ForgotPwdActivity.class));
                 break;
         }
     }
