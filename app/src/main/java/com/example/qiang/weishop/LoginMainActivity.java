@@ -141,23 +141,35 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             //执行SQL语句
             db.execSQL(stu_table);
 
-            insert(db, 1, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 0, "阿尔及利亚", 1322);
-            insert(db, 1, "中国", 32424);
+            insert(db, "阿尔巴尼亚", 355);
+            insert(db, "阿尔及利亚", 213);
+            insert(db, "阿富汗", 93);
+            insert(db, "阿根廷", 54);
+            insert(db, "爱尔兰", 353);
+            insert(db, "埃及", 20);
+            insert(db, "埃塞俄比亚", 251);
+            insert(db, "爱沙尼亚", 372);
+            insert(db, "阿拉伯联合酋长国", 971);
+            insert(db, "巴巴多斯", 1246);
+            insert(db, "朝鲜", 1246);
+            insert(db, "赤道几内亚", 240);
+            insert(db, "秘鲁", 45);
+            insert(db, "加纳", 65);
+            insert(db, "加拿大", 84);
+            insert(db, "喀麦隆", 243);
+            insert(db, "马达加斯加", 706);
+            insert(db, "美国", 1);
+            insert(db, "日本", 81);
+            insert(db, "中国", 86);
+            insert(db, "中国澳门特别行政区", 853);
+            insert(db, "中国香港特别行政区", 852);
 
         }
     }
 
-    private void insert(SQLiteDatabase db, int type, String name, int count) {
+    private void insert(SQLiteDatabase db, String name, int count) {
         //插入数据SQL语句
-        String insert_sql = "insert into countrytable(type,name,count) values(" + type + ",'" + name + "'," + count + ")";
+        String insert_sql = "insert into countrytable(name,count) values('" + name + "'," + count + ")";
         //执行SQL语句
         db.execSQL(insert_sql);
     }
@@ -176,7 +188,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.local_sum:
-                startActivityForResult(new Intent(LoginMainActivity.this, CountryActivity.class),0);
+                startActivityForResult(new Intent(LoginMainActivity.this, CountryActivity.class), 0);
                 break;
         }
     }
@@ -185,11 +197,13 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Button local_sum=(Button)findViewById(R.id.local_sum);
-        TextView local_title=(TextView)findViewById(R.id.local_title);
-       // Log.d("LoginMainActicity","backdata:"+data.getStringExtra("name"));
-        local_sum.setText(data.getStringExtra("name"));
-        local_title.setText(data.getStringExtra("count"));
+        Button local_sum = (Button) findViewById(R.id.local_sum);
+        TextView local_title = (TextView) findViewById(R.id.local_title);
+        // Log.d("LoginMainActicity","backdata:"+data.getStringExtra("name"));
+        if (data != null) {
+            local_sum.setText(data.getStringExtra("name"));
+            local_title.setText(data.getStringExtra("count"));
+        }
     }
 
 }

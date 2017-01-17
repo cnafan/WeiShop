@@ -12,6 +12,7 @@
     <string name="img3_sum">费用全免，58秒闪电开店</string>
 
     <string name="local_title">+86</string>
+    <string name="local_sum">中国</string>
     <string name="phone_hint">填写手机号</string>
     <string name="password_hint">6–16位登录密码</string>
     <string name="phone_number">手机号</string>

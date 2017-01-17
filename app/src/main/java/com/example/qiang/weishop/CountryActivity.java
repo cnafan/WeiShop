@@ -153,11 +153,13 @@ public class CountryActivity extends AppCompatActivity {
             String currentDate = mDataList.get(position).getPublishDate();
             int prevIndex = position - 1;
             boolean isDifferent = !(checkFirst(mDataList.get(prevIndex).getPublishDate()) == (checkFirst(currentDate)));
+            Log.d("CountryActivity","pre:"+mDataList.get(prevIndex).getPublishDate()+",now:"+currentDate);
+            Log.d("CountryActivity","prefirst:"+(char)(checkFirst(mDataList.get(prevIndex).getPublishDate()))+",now:"+(char)(checkFirst(currentDate)));
             return isDifferent ? GROUP_ITEM : NORMAL_ITEM;
         }
 
         int checkFirst(String s) {
-            return s.charAt(0);
+            return (int)(new ChineseCharToEn().getFirstLetter(s).charAt(0));
         }
 
         @Override
