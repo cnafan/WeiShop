@@ -17,4 +17,6 @@
     <string name="phone_number">手机号</string>
     <string name="password">密码</string>
     <string name="forgot">忘记密码</string>
+
+    <string name="choose_country">选择国家和地区</string>
 </resources>

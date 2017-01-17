@@ -14,12 +14,13 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-  static   String TAG = "qiang";
+    static String TAG = "qiang";
 
     private ViewPager viewPager;
     private ArrayList<View> pageview;
+
     //包裹点点的LinearLayout
     private ViewGroup group;
     private ImageView dotView;
@@ -62,9 +63,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             group.addView(dotViews[i]);
         }
 
-        button_login=(Button)findViewById(R.id.log_in);
+        button_login = (Button) findViewById(R.id.log_in);
         button_login.setOnClickListener(this);
-        button_signup=(Button)findViewById(R.id.sign_up);
+        button_signup = (Button) findViewById(R.id.sign_up);
         button_signup.setOnClickListener(this);
 
         //数据适配器
@@ -110,9 +111,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.log_in:
-                startActivity(new Intent(LoginActivity.this,LoginMainActivity.class));
+                startActivity(new Intent(LoginActivity.this, LoginMainActivity.class));
                 break;
             case R.id.sign_up:
                 break;
@@ -120,6 +121,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
+
+
 
     class MyListener implements ViewPager.OnPageChangeListener {
 
@@ -147,7 +150,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             arg0 = arg0 % pageview.size();
 
             int c_id = arg0;
-            Log.d(TAG, "index:"+String.valueOf(c_id));
+            Log.d(TAG, "index:" + String.valueOf(c_id));
             for (int i = 0; i < pageview.size(); i++) {
                 dotViews[arg0]
                         .setBackgroundResource(dot_id[0]);

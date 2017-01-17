@@ -30,8 +30,8 @@
     </style>
 
     <!-- -->
-    <style name="fullscreen" parent="android:Theme.NoTitleBar.Fullscreen">
-         <item name="windowActionBar">false</item>
+    <style name="fullscreen" parent="AppTheme.NoActionBar">
+        <item name="colorPrimaryDark">#00000000</item>
     </style>
 
     <!-- 全屏幕拉伸-->
