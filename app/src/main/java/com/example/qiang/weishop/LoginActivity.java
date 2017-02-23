@@ -2,6 +2,7 @@ package com.example.qiang.weishop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private Button button_login;
     private Button button_signup;
-
+    private Button button_wechat;
 
     int login_items[] = {R.layout.login_item1, R.layout.login_item2, R.layout.login_item3};
 
@@ -67,6 +68,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         button_login.setOnClickListener(this);
         button_signup = (Button) findViewById(R.id.sign_up);
         button_signup.setOnClickListener(this);
+        button_wechat=(Button)findViewById(R.id.wechat_login);
+        button_wechat.setOnClickListener(this);
 
         //数据适配器
         PagerAdapter mPagerAdapter = new PagerAdapter() {
@@ -117,6 +120,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.sign_up:
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                break;
+            case R.id.wechat_login:
+                Snackbar.make(getWindow().getDecorView(),"wechat",Snackbar.LENGTH_SHORT).show();
                 break;
             default:
                 break;

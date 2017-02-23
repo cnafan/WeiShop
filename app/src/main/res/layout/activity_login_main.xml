@@ -47,6 +47,7 @@
                 android:textColor="#000000" />
 
             <Button
+                android:gravity="center_vertical"
                 android:id="@+id/local_sum"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

@@ -105,6 +105,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.local_sum:
                 startActivityForResult(new Intent(SignUpActivity.this, CountryActivity.class), 0);
                 break;
+            case R.id.sign_up:
+                startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+                break;
         }
     }
 

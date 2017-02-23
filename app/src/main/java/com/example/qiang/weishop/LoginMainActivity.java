@@ -187,6 +187,9 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             case R.id.forgot_password:
                 startActivity(new Intent(LoginMainActivity.this,ForgotPwdActivity.class));
                 break;
+            case R.id.log_in_main:
+                startActivity(new Intent(LoginMainActivity.this,MainActivity.class));
+                break;
         }
     }
 
