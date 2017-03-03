@@ -97,7 +97,7 @@
             android:background="#ECECEC" />
 
         <Button
-            android:id="@+id/log_in_main"
+            android:id="@+id/sign_up_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
