@@ -1,8 +1,8 @@
 package com.example.qiang.weishop;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +10,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    static String TAG = "qiang";
 
     private ViewPager viewPager;
     private ArrayList<View> pageview;
@@ -26,49 +27,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView dotView;
     private ImageView[] dotViews;
 
-    public ImageView test;
+    private Button button_login;
+    private Button button_signup;
+    private Button button_wechat;
 
-    public SharedPreferences pref_default;
-    public SharedPreferences.Editor editor;
-    public SharedPreferences pref;
+    int login_items[] = {R.layout.login_item1, R.layout.login_item2, R.layout.login_item3};
 
-    int main_items[] = {R.layout.main_item1, R.layout.main_item2};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_login);
+        Log.d(TAG, "pa");
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         //查找布局文件用LayoutInflater.inflate
         LayoutInflater inflater = getLayoutInflater();
         pageview = new ArrayList<>();
-        for (int i = 0; i < main_items.length; i++) {
+        for (int i = 0; i < login_items.length; i++) {
             //将view装入数组
-            pageview.add(inflater.inflate(main_items[i], null));
+            pageview.add(inflater.inflate(login_items[i], null));
 
         }
         group = (ViewGroup) findViewById(R.id.viewgroup);
         dotViews = new ImageView[pageview.size()];
         for (int i = 0; i < pageview.size(); i++) {
-            dotView = new ImageView(MainActivity.this);
-            dotView.setLayoutParams(new ViewGroup.LayoutParams(35, 25));
+            dotView = new ImageView(WelcomeActivity.this);
+            dotView.setLayoutParams(new ViewGroup.LayoutParams(55, 25));
             dotView.setPadding(0, 0, 0, 0);
             dotViews[i] = dotView;
 
             // 默认进入程序后第一张图片被选中;
             if (i == 0) {
-                dotViews[i].setBackgroundResource(R.drawable.switch_3);
+                dotViews[i].setBackgroundResource(R.drawable.page_indicator_focused_fa);
             } else {
-                dotViews[i].setBackgroundResource(R.drawable.switch_4);
+                dotViews[i].setBackgroundResource(R.drawable.page_indicator_unfocused_fa);
             }
             group.addView(dotViews[i]);
         }
 
-        initial();
-        pref_default = getDefaultSharedPreferences(this);
-        editor = getSharedPreferences("default", MODE_PRIVATE).edit();
-        pref = getSharedPreferences("default", MODE_PRIVATE);
-        test.setOnClickListener(this);
+        button_login = (Button) findViewById(R.id.log_in);
+        button_login.setOnClickListener(this);
+        button_signup = (Button) findViewById(R.id.sign_up);
+        button_signup.setOnClickListener(this);
+        button_wechat=(Button)findViewById(R.id.wechat_login);
+        button_wechat.setOnClickListener(this);
 
         //数据适配器
         PagerAdapter mPagerAdapter = new PagerAdapter() {
@@ -111,20 +112,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    void initial() {
-        test = (ImageView) findViewById(R.id.main_kaidangonglue);
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.main_kaidangonglue:
-                startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
+            case R.id.log_in:
+                startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
+                break;
+            case R.id.sign_up:
+                startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
+                break;
+            case R.id.wechat_login:
+                Snackbar.make(getWindow().getDecorView(),"wechat",Snackbar.LENGTH_SHORT).show();
                 break;
             default:
                 break;
         }
     }
+
+
 
     class MyListener implements ViewPager.OnPageChangeListener {
 
@@ -143,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        int[] dot_id = {R.drawable.switch_3, R.drawable.switch_4};
+        int[] dot_id = {R.drawable.page_indicator_focused_fa, R.drawable.page_indicator_unfocused_fa};
 
         //当新的页面被选中时调用
         @Override
@@ -152,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             arg0 = arg0 % pageview.size();
 
             int c_id = arg0;
-            Log.d("MainActivity", "index:" + String.valueOf(c_id));
+            Log.d(TAG, "index:" + String.valueOf(c_id));
             for (int i = 0; i < pageview.size(); i++) {
                 dotViews[arg0]
                         .setBackgroundResource(dot_id[0]);
@@ -165,5 +170,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d("qiang", "当前是第" + c_id + "页");
         }
     }
-}
 
+}

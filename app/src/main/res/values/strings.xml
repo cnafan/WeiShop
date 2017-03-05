@@ -26,4 +26,11 @@
     <string name="service_xieyi">《微店平台服务协议》</string>
     <string name="manager_guifan">《微店禁售商品管理规范》</string>
     <string name="and">和</string>
+
+    <string name="set_password">设置密码</string>
+    <string name="set_password_hint">6-16位登录密码</string>
+    <string name="reacquire">重新获取</string>
+    <string name="verification_code">验证码</string>
+    <string name="six_verification_code">六位验证码</string>
+    <string name="cant_receive_code">收不到验证码？</string>
 </resources>

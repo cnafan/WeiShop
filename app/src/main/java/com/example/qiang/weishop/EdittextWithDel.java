@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import static com.example.qiang.weishop.LoginActivity.TAG;
+import static com.example.qiang.weishop.WelcomeActivity.TAG;
 
 /**
  * Created by qiang on 2017/1/9.
