@@ -132,7 +132,7 @@
             android:layout_height="2dp"
             android:background="#ECECEC" />
         <Button
-            android:id="@+id/log_in_main"
+            android:id="@+id/login_submit"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"

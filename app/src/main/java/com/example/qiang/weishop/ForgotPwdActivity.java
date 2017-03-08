@@ -18,12 +18,12 @@ public class ForgotPwdActivity extends AppCompatActivity implements View.OnClick
 
     private Button local;
     private EditText phone_sum;
-    private Button forgotpwd_main;
+    private Button forgot_password_next;
 
     void initial() {
         local = (Button) findViewById(R.id.local_sum);
         phone_sum = (EditText) findViewById(R.id.phone_sum);
-        forgotpwd_main = (Button) findViewById(R.id.log_in_main);
+        forgot_password_next = (Button) findViewById(R.id.forgot_password_next);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +45,12 @@ public class ForgotPwdActivity extends AppCompatActivity implements View.OnClick
                 // TODO Auto-generated method stub
                 int len_phone = s.length();
                 if (len_phone > 0) {
-                    forgotpwd_main.setBackgroundResource(R.drawable.shape_dark);
-                    forgotpwd_main.setTextColor((Color.parseColor("#FFFFFF")));
+                    forgot_password_next.setBackgroundResource(R.drawable.shape_dark);
+                    forgot_password_next.setTextColor((Color.parseColor("#FFFFFF")));
                 } else {
 
-                    forgotpwd_main.setBackgroundResource(R.drawable.shape_light);
-                    forgotpwd_main.setTextColor((Color.parseColor("#F6D8DB")));
+                    forgot_password_next.setBackgroundResource(R.drawable.shape_light);
+                    forgot_password_next.setTextColor((Color.parseColor("#F6D8DB")));
                 }
             }
 

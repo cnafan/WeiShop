@@ -5,15 +5,20 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -21,7 +26,36 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Handler mHandler = new Handler() {
 
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    //完成主界面更新,拿到数据
+                    //String data = (String)msg.obj;
+                    Log.d("LoginActivity", "handle处理中.");
+                    Toast.makeText(getApplicationContext(),"登录成功",Toast.LENGTH_SHORT).show();
+                    Intent next=new Intent(new Intent(LoginActivity.this, MainActivity.class));
+                    editor.putString("user_id",phone_sum.getText().toString());
+                    editor.commit();
+                    next.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(next);
+                    break;
+                case 1:
+                    //完成主界面更新,拿到数据
+                    //String data = (String)msg.obj;
+                    Log.d("LoginActivity", "handle处理中.");
+                    Toast.makeText(getApplicationContext(),"密码错误",Toast.LENGTH_SHORT).show();
+                    password_sum.setText("");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    };
     public SharedPreferences pref_default;
     public SharedPreferences.Editor editor;
     public SharedPreferences pref;
@@ -29,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button local;
     private EditText phone_sum;
     private EditText password_sum;
-    private Button log_in_main;
+    private Button button_login_submit;
     private TextView textView_forgot;
 
     void initial() {
@@ -37,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textView_forgot = (TextView) findViewById(R.id.forgot_password);
         phone_sum = (EditText) findViewById(R.id.phone_sum);
         password_sum = (EditText) findViewById(R.id.password_sum);
-        log_in_main = (Button) findViewById(R.id.log_in_main);
+        button_login_submit = (Button) findViewById(R.id.login_submit);
     }
 
     @Override
@@ -56,7 +90,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         initial();
 
-        log_in_main.setClickable(false);
+        button_login_submit.setOnClickListener(this);
+        //login_submit.setClickable(false);
         local.setOnClickListener(this);
         phone_sum.addTextChangedListener(new TextWatcher() {
 
@@ -66,14 +101,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 int len_phone = s.length();
                 int len_password = password_sum.getText().length();
                 if (len_password > 0 && len_phone > 0) {
-                    log_in_main.setClickable(true);
-                    log_in_main.setBackgroundResource(R.drawable.shape_dark);
-                    log_in_main.setTextColor((Color.parseColor("#FFFFFF")));
+                    button_login_submit.setClickable(true);
+                    button_login_submit.setBackgroundResource(R.drawable.shape_dark);
+                    button_login_submit.setTextColor((Color.parseColor("#FFFFFF")));
                 } else {
 
-                    log_in_main.setClickable(false);
-                    log_in_main.setBackgroundResource(R.drawable.shape_light);
-                    log_in_main.setTextColor((Color.parseColor("#F6D8DB")));
+                    button_login_submit.setClickable(false);
+                    button_login_submit.setBackgroundResource(R.drawable.shape_light);
+                    button_login_submit.setTextColor((Color.parseColor("#F6D8DB")));
                 }
             }
 
@@ -98,14 +133,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 int len_phone = phone_sum.getText().length();
                 if (len_password > 0 && len_phone > 0) {
 
-                    log_in_main.setClickable(true);
-                    log_in_main.setBackgroundResource(R.drawable.shape_dark);
-                    log_in_main.setTextColor((Color.parseColor("#FFFFFF")));
+                    button_login_submit.setClickable(true);
+                    button_login_submit.setBackgroundResource(R.drawable.shape_dark);
+                    button_login_submit.setTextColor((Color.parseColor("#FFFFFF")));
                 } else {
 
-                    log_in_main.setClickable(false);
-                    log_in_main.setBackgroundResource(R.drawable.shape_light);
-                    log_in_main.setTextColor((Color.parseColor("#F6D8DB")));
+                    button_login_submit.setClickable(false);
+                    button_login_submit.setBackgroundResource(R.drawable.shape_light);
+                    button_login_submit.setTextColor((Color.parseColor("#F6D8DB")));
                 }
             }
 
@@ -191,11 +226,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivityForResult(new Intent(LoginActivity.this, CountryActivity.class), 0);
                 break;
             case R.id.forgot_password:
+                Log.d("qiang","dsfaksf");
                 startActivity(new Intent(LoginActivity.this, ForgotPwdActivity.class));
                 break;
-            case R.id.log_in_main:
-
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            case R.id.login_submit:
+                Snackbar.make(v,"qiang",Snackbar.LENGTH_SHORT).show();
+                Log.d("LoginActivity", "开始处理了");
+                PostThread postThreat= new PostThread(mHandler, 1, phone_sum.getText().toString(), password_sum.getText().toString(), local.getText().toString());
+                postThreat.start();
+                break;
+            default:
+                Log.d("LoginActivity", "click");
                 break;
         }
     }

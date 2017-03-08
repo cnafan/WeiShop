@@ -39,7 +39,7 @@ public class EdittextWithDel extends EditText {
     }
 
     private void init() {
-        imgInable = mContext.getResources().getDrawable(R.drawable.del_icon_20);
+        imgInable = mContext.getResources().getDrawable(R.drawable.del_icon_25);
         addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {

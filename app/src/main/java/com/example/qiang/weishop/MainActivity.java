@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private TextView textView_user_id;
     private ViewPager viewPager;
     private ArrayList<View> pageview;
 
@@ -33,10 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public SharedPreferences pref;
 
     int main_items[] = {R.layout.main_item1, R.layout.main_item2};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         //查找布局文件用LayoutInflater.inflate
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dotViews = new ImageView[pageview.size()];
         for (int i = 0; i < pageview.size(); i++) {
             dotView = new ImageView(MainActivity.this);
-            dotView.setLayoutParams(new ViewGroup.LayoutParams(35, 25));
+            dotView.setLayoutParams(new ViewGroup.LayoutParams(35, 15));
             dotView.setPadding(0, 0, 0, 0);
             dotViews[i] = dotView;
 
@@ -65,9 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         initial();
+
         pref_default = getDefaultSharedPreferences(this);
         editor = getSharedPreferences("default", MODE_PRIVATE).edit();
         pref = getSharedPreferences("default", MODE_PRIVATE);
+
+        textView_user_id.setText(pref.getString("user_id", ""));
         test.setOnClickListener(this);
 
         //数据适配器
@@ -113,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void initial() {
         test = (ImageView) findViewById(R.id.main_kaidangonglue);
+        textView_user_id = (TextView) findViewById(R.id.user_id);
     }
 
     @Override

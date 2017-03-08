@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.example.qiang.weishop"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 20
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

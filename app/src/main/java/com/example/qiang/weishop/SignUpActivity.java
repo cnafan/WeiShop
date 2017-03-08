@@ -9,9 +9,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,6 +47,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         sign_up_main.setOnClickListener(this);
         sign_up_main.setClickable(false);
         local.setOnClickListener(this);
+        phone_sum.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
         phone_sum.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -112,7 +115,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.sign_up_main:
-                startActivity(new Intent(SignUpActivity.this, SignUpNextActivity.class));
+
+                int len_phone=phone_sum.getText().length();
+                if (len_phone==11) {
+                    Intent next = new Intent(SignUpActivity.this, SignUpNextActivity.class);
+                    next.putExtra("phone", phone_sum.getText().toString());
+                    startActivity(next);
+                }
+                else {
+                    Toast.makeText(this,"请输入正确的手机号",Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

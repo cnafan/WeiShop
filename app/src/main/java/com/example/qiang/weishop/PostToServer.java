@@ -20,14 +20,15 @@ import java.util.List;
  */
 
 public class PostToServer {
-    String PostToServer_login(String username, String password) {
+    String PostToServer_login(String phone, String password,String country) {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost("http://123.206.52.70:9900/login");
         try {
             // 为httpPost设置HttpEntity对象
             List<NameValuePair> parameters = new ArrayList<NameValuePair>();
-            parameters.add(new BasicNameValuePair("username", username));
+            parameters.add(new BasicNameValuePair("phone", phone));
             parameters.add(new BasicNameValuePair("password", password));
+            parameters.add(new BasicNameValuePair("country", country));
             HttpEntity entity = new UrlEncodedFormEntity(parameters);
             httpPost.setEntity(entity);
             // httpClient执行httpPost表单提交
@@ -36,10 +37,10 @@ public class PostToServer {
             HttpEntity responseEntity = response.getEntity();
             if (responseEntity != null) {
 
-                Log.d("PostToServer", "response:" + EntityUtils
-                        .toString(responseEntity));
-                return EntityUtils
+                String entityutils=EntityUtils
                         .toString(responseEntity, "utf-8");
+                Log.d("PostToServer", "response:" + entityutils);
+                return entityutils;
             } else {
                 Log.d("PostToServer", "服务器无响应");
             }
@@ -54,14 +55,15 @@ public class PostToServer {
 
     }
 
-    String PostToServer_signup(String username, String password) {
+    String PostToServer_signup(String phone, String password,String country) {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost("http://123.206.52.70:9900/register");
         try {
             // 为httpPost设置HttpEntity对象
             List<NameValuePair> parameters = new ArrayList<NameValuePair>();
-            parameters.add(new BasicNameValuePair("username", username));
+            parameters.add(new BasicNameValuePair("phone", phone));
             parameters.add(new BasicNameValuePair("password", password));
+            parameters.add(new BasicNameValuePair("country", country));
             HttpEntity entity = new UrlEncodedFormEntity(parameters);
             httpPost.setEntity(entity);
             // httpClient执行httpPost表单提交
@@ -69,10 +71,11 @@ public class PostToServer {
             // 得到服务器响应实体对象
             HttpEntity responseEntity = response.getEntity();
             if (responseEntity != null) {
-                Log.d("PostToServer", "response:" + EntityUtils
-                        .toString(responseEntity));
-                return EntityUtils
+
+                String entityutils=EntityUtils
                         .toString(responseEntity, "utf-8");
+                Log.d("PostToServer", "response:" + entityutils);
+                return entityutils;
             } else {
                 Log.d("PostToServer", "服务器无响应");
             }
