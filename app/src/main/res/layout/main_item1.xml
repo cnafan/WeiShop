@@ -38,9 +38,11 @@
                     android:padding="15dp">
 
                     <ImageButton
+                        android:id="@+id/main_button_note"
                         android:layout_width="@dimen/main_button_bian"
                         android:layout_height="@dimen/main_button_bian"
                         android:background="@drawable/main_item_shape"
+                        android:onClick="main_button_note_click"
                         android:src="@mipmap/button_1"
                         android:text="123" />
 
@@ -53,9 +55,11 @@
                     android:padding="15dp">
 
                     <ImageButton
+                        android:id="@+id/main_button_commodity"
                         android:layout_width="@dimen/main_button_bian"
                         android:layout_height="@dimen/main_button_bian"
                         android:background="@drawable/main_item_shape"
+                        android:onClick="main_button_commodity_click"
                         android:src="@mipmap/button_2"
                         android:text="123" />
 
@@ -77,9 +81,11 @@
                     android:padding="15dp">
 
                     <ImageButton
+                        android:id="@+id/main_button_Order"
                         android:layout_width="@dimen/main_button_bian"
                         android:layout_height="@dimen/main_button_bian"
                         android:background="@drawable/main_item_shape"
+                        android:onClick="main_button_Order_click"
                         android:src="@mipmap/button_3"
                         android:text="123" />
 
@@ -92,9 +98,11 @@
                     android:padding="15dp">
 
                     <ImageButton
+                        android:id="@+id/main_button_statistics"
                         android:layout_width="@dimen/main_button_bian"
                         android:layout_height="@dimen/main_button_bian"
                         android:background="@drawable/main_item_shape"
+                        android:onClick="main_button_statistics_click"
                         android:src="@mipmap/button_4"
                         android:text="123" />
 
@@ -115,9 +123,11 @@
                     android:padding="15dp">
 
                     <ImageButton
+                        android:id="@+id/main_button_client"
                         android:layout_width="@dimen/main_button_bian"
                         android:layout_height="@dimen/main_button_bian"
                         android:background="@drawable/main_item_shape"
+                        android:onClick="main_button_client_click"
                         android:src="@mipmap/button_5"
                         android:text="123" />
 
@@ -130,9 +140,11 @@
                     android:padding="15dp">
 
                     <ImageButton
+                        android:id="@+id/main_button_income"
                         android:layout_width="@dimen/main_button_bian"
                         android:layout_height="@dimen/main_button_bian"
                         android:background="@drawable/main_item_shape"
+                        android:onClick="main_button_income_click"
                         android:src="@mipmap/button_6"
                         android:text="123" />
 

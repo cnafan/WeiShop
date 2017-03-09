@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView dotView;
     private ImageView[] dotViews;
 
-    public ImageView test;
+    private ImageView imageView_kaidangonglue;
+    private ImageView imageView_setting;
+    private ImageView imageView_notification;
 
     public SharedPreferences pref_default;
     public SharedPreferences.Editor editor;
@@ -36,12 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     int main_items[] = {R.layout.main_item1, R.layout.main_item2};
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         //查找布局文件用LayoutInflater.inflate
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < main_items.length; i++) {
             //将view装入数组
             pageview.add(inflater.inflate(main_items[i], null));
-
         }
         group = (ViewGroup) findViewById(R.id.viewgroup);
         dotViews = new ImageView[pageview.size()];
@@ -76,7 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pref = getSharedPreferences("default", MODE_PRIVATE);
 
         textView_user_id.setText(pref.getString("user_id", ""));
-        test.setOnClickListener(this);
+        imageView_kaidangonglue.setOnClickListener(this);
+        imageView_notification.setOnClickListener(this);
+        imageView_setting.setOnClickListener(this);
 
         //数据适配器
         PagerAdapter mPagerAdapter = new PagerAdapter() {
@@ -105,8 +106,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ((ViewPager) arg0).addView(pageview.get(arg1));
                 return pageview.get(arg1);
             }
-
-
         };
         //  dotview = (ViewGroup) inflater.inflate(R.layout.login_dot, null);
         // group是R.layou.main中的负责包裹小圆点的LinearLayout.
@@ -116,18 +115,74 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //设置监听
         viewPager.setOnPageChangeListener(new MyListener());
         //绑定监听事件
-
     }
 
     void initial() {
-        test = (ImageView) findViewById(R.id.main_kaidangonglue);
+        imageView_kaidangonglue = (ImageView) findViewById(R.id.main_kaidangonglue);
+        imageView_setting = (ImageView) findViewById(R.id.main_setting);
+        imageView_notification = (ImageView) findViewById(R.id.main_tongzhi);
         textView_user_id = (TextView) findViewById(R.id.user_id);
+    }
+
+    public void main_button_note_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainNoteActivity.class));
+    }
+
+    public void main_button_commodity_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainCommodityActivity.class));
+    }
+
+    public void main_button_Order_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainOrderActivity.class));
+    }
+
+    public void main_button_statistics_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainStatisticsActivity.class));
+    }
+
+    public void main_button_client_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainClientActivity.class));
+    }
+
+    public void main_button_income_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainIncomeActivity.class));
+    }
+
+    public void main_button_Promotion_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainPromotionActivity.class));
+    }
+
+    public void main_button_service_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainServiceActivity.class));
+    }
+
+    public void main_button_Supply_from_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainSupplyFromActivity.class));
+    }
+
+    public void main_button_Supply_to_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainSupplyToActivity.class));
+    }
+
+    public void main_button_community_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainCommunityActivity.class));
+    }
+
+    public void main_button_Punch_click(View view) {
+        startActivity(new Intent(MainActivity.this, MainPunchActivity.class));
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
             case R.id.main_kaidangonglue:
+                startActivity(new Intent(MainActivity.this, RaidersActivity.class));
+                break;
+            case R.id.main_setting:
+                startActivity(new Intent(MainActivity.this, SettingActivity.class));
+                break;
+            case R.id.main_tongzhi:
                 startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
                 break;
             default:

@@ -19,9 +19,11 @@
             android:padding="15dp">
 
             <ImageButton
+                android:id="@+id/main_button_Promotion"
                 android:layout_width="@dimen/main_button_bian"
                 android:layout_height="@dimen/main_button_bian"
                 android:background="@drawable/main_item_shape"
+                android:onClick="main_button_Promotion_click"
                 android:src="@mipmap/button_7"
                 android:text="123" />
 
@@ -34,9 +36,11 @@
             android:padding="15dp">
 
             <ImageButton
+                android:id="@+id/main_button_service"
                 android:layout_width="@dimen/main_button_bian"
                 android:layout_height="@dimen/main_button_bian"
                 android:background="@drawable/main_item_shape"
+                android:onClick="main_button_service_click"
                 android:src="@mipmap/button_8"
                 android:text="123" />
 
@@ -58,9 +62,11 @@
             android:padding="15dp">
 
             <ImageButton
+                android:id="@+id/main_button_Supply_from"
                 android:layout_width="@dimen/main_button_bian"
                 android:layout_height="@dimen/main_button_bian"
                 android:background="@drawable/main_item_shape"
+                android:onClick="main_button_Supply_from_click"
                 android:src="@mipmap/button_9"
                 android:text="123" />
 
@@ -73,9 +79,11 @@
             android:padding="15dp">
 
             <ImageButton
+                android:id="@+id/main_button_Supply_to"
                 android:layout_width="@dimen/main_button_bian"
                 android:layout_height="@dimen/main_button_bian"
                 android:background="@drawable/main_item_shape"
+                android:onClick="main_button_Supply_to_click"
                 android:src="@mipmap/button_10"
                 android:text="123" />
 
@@ -96,9 +104,11 @@
             android:padding="15dp">
 
             <ImageButton
+                android:id="@+id/main_button_community"
                 android:layout_width="@dimen/main_button_bian"
                 android:layout_height="@dimen/main_button_bian"
                 android:background="@drawable/main_item_shape"
+                android:onClick="main_button_community_click"
                 android:src="@mipmap/button_11"
                 android:text="123" />
 
@@ -111,9 +121,11 @@
             android:padding="15dp">
 
             <ImageButton
+                android:id="@+id/main_button_Punch"
                 android:layout_width="@dimen/main_button_bian"
                 android:layout_height="@dimen/main_button_bian"
                 android:background="@drawable/main_item_shape"
+                android:onClick="main_button_Punch_click"
                 android:src="@mipmap/button_12"
                 android:text="123" />
 

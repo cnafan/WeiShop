@@ -33,4 +33,49 @@
     <string name="verification_code">验证码</string>
     <string name="six_verification_code">六位验证码</string>
     <string name="cant_receive_code">收不到验证码？</string>
+
+    <string name="setting">设置</string>
+    <string name="account_manage">帐号管理</string>
+    <string name="Business_file">生意档案</string>
+    <string name="Moving_assistant">搬家助手</string>
+    <string name="Delivery_assistant">送货助手</string>
+    <string name="New_message_notification">新消息通知</string>
+    <string name="Punish_complaint">处罚申诉</string>
+    <string name="weishop_web_version">微店网页版</string>
+    <string name="weishop_about">关于微店</string>
+    <string name="weishop_rule">微店规则</string>
+    <string name="help_and_feedback">帮助与反馈</string>
+    <string name="check_update">检查升级</string>
+    <string name="Evaluation">求评价</string>
+
+    <string name="sign_out">退出登录</string>
+    <string name="Raiders">开单攻略</string>
+
+    <string name="note">笔记</string>
+    <string name="commodity">商品</string>
+    <string name="Order">订单</string>
+    <string name="statistics">统计</string>
+    <string name="client">客户</string>
+    <string name="income">收入</string>
+    <string name="Promotion">推广</string>
+    <string name="service">服务</string>
+    <string name="Supply_from">货源</string>
+    <string name="Supply_to">供货</string>
+    <string name="community">社区</string>
+    <string name="chat_message">聊天消息</string>
+    <string name="Punch">打卡</string>
+
+    <string name="order_manage">订单管理</string>
+    <string name="my_income">我的收入</string>
+    <string name="supply_to_title">微店供应商报名开始啦！</string>
+    <string name="weishop_community">微店社区</string>
+    <string name="notification">通知</string>
+
+    <string name="Manager_Punch">店长打卡</string>
+    <string name="manager_note">店长笔记</string>
+    <string name="weishop_headline">微店头条</string>
+    
+    <string name="Sale">出售中</string>
+    <string name="Off_the_shelf">已下架</string>
+    <string name="classification">分类</string>
 </resources>
