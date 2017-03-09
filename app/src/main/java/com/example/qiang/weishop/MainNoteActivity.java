@@ -3,13 +3,15 @@ package com.example.qiang.weishop;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class MainNoteActivity extends AppCompatActivity {
 
-    private WebView webView_weishop_headline;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class MainNoteActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
         getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
 
-        webView_weishop_headline = (WebView) findViewById(R.id.webview_weishop_headline);
+        webView = (WebView) findViewById(R.id.webview_weishop_headline);
         init();
     }
 
@@ -36,14 +38,11 @@ public class MainNoteActivity extends AppCompatActivity {
 
 
     private void init() {
-
-        webView_weishop_headline.getSettings().setSupportZoom(false);
-        webView_weishop_headline.getSettings().setDomStorageEnabled(true);
-        webView_weishop_headline.getSettings().setJavaScriptEnabled(true);
-        //WebView加载web资源
-
+        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setJavaScriptEnabled(true);
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
-        webView_weishop_headline.setWebViewClient(new WebViewClient() {
+        webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 // TODO Auto-generated method stub
@@ -51,7 +50,21 @@ public class MainNoteActivity extends AppCompatActivity {
                 view.loadUrl(url);
                 return false;
             }
+        });//WebView加载web资源
+
+        webView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    if (keyCode == KeyEvent.KEYCODE_BACK && webView.canGoBack()) {  //表示按返回键时的操作
+                        webView.goBack();   //后退
+                        //webview.goForward();//前进
+                        return true;    //已处理
+                    }
+                }
+                return false;
+            }
         });
-        webView_weishop_headline.loadUrl("https://weidian.com/p5/diary/pages/diary-record.php");
+        webView.loadUrl("https://weidian.com/p5/diary/pages/diary-record.php");
     }
 }
