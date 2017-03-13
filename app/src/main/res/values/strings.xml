@@ -74,8 +74,80 @@
     <string name="Manager_Punch">店长打卡</string>
     <string name="manager_note">店长笔记</string>
     <string name="weishop_headline">微店头条</string>
-    
+
     <string name="Sale">出售中</string>
     <string name="Off_the_shelf">已下架</string>
     <string name="classification">分类</string>
+    <string name="weishop_manager">微店管理</string>
+
+    <string name="Shop_decoration">店铺装修</string>
+    <string name="weichat_payment">微信收款</string>
+    <string name="Shop_announcement">店铺公告</string>
+    <string name="Shipping_settings">运费设置</string>
+
+    <string name="nactivated">已开通</string>
+    <string name="nonactivated">未开通</string>
+    <string name="join_qq_shop_number">加入qq购物车号</string>
+    <string name="Authentication">身份认证</string>
+    <string name="Unauthenticated">未认证</string>
+    <string name="Certification">资质认证</string>
+    <string name="Save_stocking">减库存方式</string>
+    <string name="Take_off_the_stock">拍下减库存</string>
+    <string name="Automatic_confirmation_harvest_time">自动确认收获时间</string>
+    <string name="Seven_days">7天</string>
+    <string name="Secured_transactions">担保交易</string>
+    <string name="Direct_arrival">直接到账</string>
+    <string name="Cash_on_delivery">货到付款</string>
+    <string name="Return_protection">退货保障</string>
+    <string name="Margin_protection">保证金保障</string>
+
+
+    <string name="Preview">预览</string>
+    <string name="QR_code">二维码</string>
+    <string name="copy_Link">复制链接</string>
+    <string name="share">分享</string>
+
+    <string name="yesterday_views">昨日浏览</string>
+    <string name="total_views">总浏览量</string>
+    <string name="Collection">收藏</string>
+    <string name="awesome">赞</string>
+
+    <string name="Visitors">访客</string>
+    <string name="Money">金额</string>
+
+    <string name="Get_more_orders">如何获得更多订单？</string>
+
+    <string name="Can_be_raised">可提现</string>
+    <string name="Completed_transactions">已完成交易</string>
+
+    <string name="Transactions">交易中</string>
+    <string name="Ongoing_transactions">进行中的交易</string>
+    <string name="Has_been_raised">已提现</string>
+    <string name="zero_point">0.00</string>
+    <string name="Binding_card">绑定银行卡</string>
+    <string name="Income_and_expenditure_details">收支明细</string>
+    <string name="Unbounded">未绑定</string>
+
+    <string name="order_search">商品名、订单号、手机号、姓名等</string>
+    <string name="processing">进行中</string>
+    <string name="completed">已完成</string>
+    <string name="closed">已关闭</string>
+
+    <string name="to_be_delivered">待发货</string>
+    <string name="Pending_payment">待付款</string>
+    <string name="Shipped">已发货</string>
+    <string name="Refunding">退款中</string>
+
+    <string name="Add_new_product">添加新商品</string>
+    <string name="Good_Recommended_goods">好货推荐</string>
+
+    <string name="more">更多  ></string>
+
+    <string name="Quick_shop">快速开店</string>
+    <string name="Sourcing">寻找货源</string>
+    <string name="Taobao_move">淘宝搬家</string>
+
+    <string name="Join_weishop">加盟微店</string>
+    <string name="Moving_assistant_weishop">搬家助手 一 微店</string>
+
 </resources>

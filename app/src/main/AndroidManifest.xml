@@ -88,6 +88,15 @@
         <activity
             android:name=".MainCommodityActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ManagerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".JoinWeishopActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TaobaoMoveActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -172,6 +172,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(new Intent(MainActivity.this, MainPunchActivity.class));
     }
 
+    public void top_click(View view){
+        Intent intent=new Intent(MainActivity.this,ManagerActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

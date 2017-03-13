@@ -10,4 +10,15 @@
     <color name="country_item_background">#f2f2f2</color>
     <color name="country_item_first_background">#dcdcdc</color>
     <color name="blue">#3c70e5</color>
+    <color name="split">#e4e2e2</color>
+    <color name="bottom">#f9fafb</color>
+
+    <color name="statistics_bottom_button">#90c5dd</color>
+    <color name="income_pannel">#fe453a</color>
+    <color name="gray_text">#cecece</color>
+
+    <color name="order_search">#eeeeee</color>
+
+    <color name="order_fragment_button">#f5f5f5</color>
+
 </resources>

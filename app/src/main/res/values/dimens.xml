@@ -6,4 +6,15 @@
     <dimen name="main_button_margintop">20dp</dimen>
     <dimen name="main_button_marginright">30dp</dimen>
     <dimen name="main_icon">25dp</dimen>
+
+    <dimen name="income_item_margin_left">20dp</dimen>
+    <dimen name="income_item_padding">14dp</dimen>
+    <dimen name="income_zero_size">18sp</dimen>
+    <dimen name="income_small_text">13sp</dimen>
+
+    <dimen name="order_fragment_size">24sp</dimen>
+    <dimen name="order_fragment_headline_size">11sp</dimen>
+    <dimen name="order_top_button">16sp</dimen>
+    <dimen name="order_split">10dp</dimen>
+
 </resources>

@@ -9,13 +9,13 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class MainPunchActivity extends AppCompatActivity {
+public class TaobaoMoveActivity extends AppCompatActivity {
 
     private WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_punch);
+        setContentView(R.layout.activity_taobao_move);
 
         init();
     }
@@ -34,7 +34,7 @@ public class MainPunchActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
         getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
-        webView=(WebView)findViewById(R.id.webview_punch);
+        webView=(WebView)findViewById(R.id.webview_Moving_assistant);
 
         webView.getSettings().setSupportZoom(false);
         webView.getSettings().setDomStorageEnabled(true);
@@ -63,6 +63,6 @@ public class MainPunchActivity extends AppCompatActivity {
                 return false;
             }
         });
-        webView.loadUrl("https://weidian.com/promotion/activity/turntable/index.php");
+        webView.loadUrl("https://weidian.com/p5/app/pages/tbMove/index.php?client=android&apiv=776&wfr=wd_app&userid=1141609553");
     }
 }

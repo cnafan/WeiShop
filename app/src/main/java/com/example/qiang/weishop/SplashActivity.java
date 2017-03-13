@@ -38,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
                 pref = getSharedPreferences("default", MODE_PRIVATE);
 
                 boolean isfirstrun = pref.getBoolean("isfirstrun", true);
-                Log.d(TAG,"isfirst:"+isfirstrun);
+                Log.d(TAG, "isfirst:" + isfirstrun);
                 if (isfirstrun) {
                     editor.putBoolean("isfirstrun", false);
                     editor.commit();
