@@ -1,29 +1,52 @@
 package com.example.qiang.weishop;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.TextView;
 
-public class MainNoteActivity extends AppCompatActivity {
+import static com.example.qiang.weishop.R.id.fragment_manager_note;
 
-    private WebView webView;
+public class MainNoteActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private FragmentManagerNote fragmentManagerNote;
+    private FragmentNoteHeadline fragmentNoteHeadline;
+    private FragmentManager manager;
+
+    private TextView textViewHeadline;
+    private TextView textViewManagernote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_note);
+
+        initial();
+    }
+
+    void initial() {
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
         getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
 
-        webView = (WebView) findViewById(R.id.webview_weishop_headline);
-        init();
+
+        textViewHeadline=(TextView)findViewById(R.id.weishop_headline);
+        textViewManagernote=(TextView)findViewById(R.id.note_manager_note);
+        textViewHeadline.setOnClickListener(this);
+        textViewManagernote.setOnClickListener(this);
+
+        fragmentManagerNote = new FragmentManagerNote();
+        fragmentNoteHeadline = new FragmentNoteHeadline();
+
+        manager = getSupportFragmentManager();
+        manager.beginTransaction().add(fragment_manager_note, fragmentManagerNote).commit();
+        manager.beginTransaction().replace(R.id.fragment_headline, fragmentNoteHeadline).commit();
+
     }
 
     @Override
@@ -37,34 +60,20 @@ public class MainNoteActivity extends AppCompatActivity {
     }
 
 
-    private void init() {
-        webView.getSettings().setSupportZoom(false);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.getSettings().setJavaScriptEnabled(true);
-        //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                // TODO Auto-generated method stub
-                //返回值是true的时候控制去WebView打开，为false调用系统浏览器或第三方浏览器
-                view.loadUrl(url);
-                return false;
-            }
-        });//WebView加载web资源
 
-        webView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    if (keyCode == KeyEvent.KEYCODE_BACK && webView.canGoBack()) {  //表示按返回键时的操作
-                        webView.goBack();   //后退
-                        //webview.goForward();//前进
-                        return true;    //已处理
-                    }
-                }
-                return false;
-            }
-        });
-        webView.loadUrl("https://weidian.com/p5/diary/pages/diary-record.php");
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.note_manager_note:
+                Snackbar.make(v,v+"",Snackbar.LENGTH_SHORT).show();
+                manager.beginTransaction().hide(fragmentNoteHeadline).show(fragmentManagerNote).commit();
+                break;
+            case R.id.weishop_headline:
+                Snackbar.make(v,v+"",Snackbar.LENGTH_SHORT).show();
+                manager.beginTransaction().hide(fragmentManagerNote).show(fragmentNoteHeadline).commit();
+                break;
+        }
     }
 }

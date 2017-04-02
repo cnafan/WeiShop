@@ -17,12 +17,12 @@
 
 
         <TextView
-
-            android:id="@+id/manager_note"
+            android:id="@+id/note_manager_note"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:clickable="true"
+            android:onClick="fragment_note_manager_note"
             android:text="@string/manager_note"
             android:textColor="@color/white" />
 
@@ -32,15 +32,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:clickable="true"
+            android:onClick="fragment_note_headline"
             android:text="@string/weishop_headline"
             android:textColor="@color/white" />
     </android.support.v7.widget.Toolbar>
 
 
-    <WebView
-        android:id="@+id/webview_weishop_headline"
+    <RelativeLayout
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="0dp">
+        <FrameLayout
+            android:id="@+id/fragment_manager_note"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/fragment_headline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+    </RelativeLayout>
+
 
 </LinearLayout>
