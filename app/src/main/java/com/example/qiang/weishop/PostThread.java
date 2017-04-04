@@ -5,6 +5,7 @@ import android.os.Looper;
 import android.util.Log;
 
 import java.net.URLEncoder;
+import java.util.Objects;
 
 /**
  * Created by qiang on 2017/3/5.
@@ -68,6 +69,12 @@ class PostThread extends Thread implements Runnable {
                         Looper.loop();
                         break;
 
+                }
+                break;
+            case 2:
+                String response_logout = new PostToServer().PostToServer_logout(name);
+                if (Objects.equals(response_logout, "0")){
+                    handler.sendEmptyMessage(0);
                 }
                 break;
         }

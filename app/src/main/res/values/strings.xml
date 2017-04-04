@@ -159,7 +159,21 @@
     <string name="Please_fill_in_the_contents">请填写内容</string>
     <string name="release">发布</string>
     <string name="edit_note">编辑笔记</string>
-<string name="complete">完成</string>
+    <string name="complete">完成</string>
 
     <string name="delete_note">删除笔记</string>
+    <string name="weishop_info">微店信息</string>
+    <string name="shop_logo">店铺logo</string>
+    <string name="shop_name">店铺名称</string>
+    <string name="Head_manager">店长头像</string>
+    <string name="Manager_nickname">店长昵称</string>
+    <string name="Manager_tag">店长标签</string>
+    
+    <string name="wechat_number">微信号</string>
+    <string name="wechat_QR_code">微信二维码</string>
+    <string name="Manager_card">店长名片</string>
+    <string name="shop_level">微店等级</string>
+    <string name="Main_category">主营类目</string>
+    <string name="Entity_store_address">实体店地址</string>
+    <string name="consumer_hotline">客服电话</string>
 </resources>

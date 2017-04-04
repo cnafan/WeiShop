@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_sign_up_next"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.qiang.weishop.SettingActivity">
+    android:orientation="vertical"
+    tools:context="com.example.qiang.weishop.ManagerInfoActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:theme="@style/ToolbarTheme"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:theme="@style/ToolbarTheme">
+
 
         <TextView
+
+            android:id="@+id/manager_note"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/setting"
+            android:clickable="true"
+            android:text="@string/weishop_info"
             android:textColor="@color/white" />
+
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
@@ -46,7 +48,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/account_manage"
+                    android:text="@string/shop_logo"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -78,135 +80,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/Business_file"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="20dp"
-                    android:text=">" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#e4e2e2">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#00000000"
-                    android:padding="20dp"
-                    android:text="@string/Moving_assistant"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="20dp"
-                    android:text=">" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#e4e2e2">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#00000000"
-                    android:padding="20dp"
-                    android:text="@string/Delivery_assistant"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="20dp"
-                    android:text=">" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#e4e2e2">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#00000000"
-                    android:padding="20dp"
-                    android:text="@string/New_message_notification"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="20dp"
-                    android:text=">" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#e4e2e2">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#00000000"
-                    android:padding="20dp"
-                    android:text="@string/Punish_complaint"
+                    android:text="@string/shop_name"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -234,7 +108,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/weishop_web_version"
+                    android:text="@string/Head_manager"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -244,7 +118,166 @@
                     android:layout_gravity="right|center"
                     android:layout_marginRight="20dp"
                     android:text=">" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#e4e2e2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="#00000000"
+                    android:padding="20dp"
+                    android:text="@string/Manager_nickname"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="20dp"
+                    android:text=">" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#e4e2e2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="#00000000"
+                    android:padding="20dp"
+                    android:text="@string/Manager_tag"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="20dp"
+                    android:text=">" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#e4e2e2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="#00000000"
+                    android:padding="20dp"
+                    android:text="@string/wechat_number"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="20dp"
+                    android:text=">" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#e4e2e2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="#00000000"
+                    android:padding="20dp"
+                    android:text="@string/wechat_QR_code"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="20dp"
+                    android:text=">" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#e4e2e2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="#00000000"
+                    android:padding="20dp"
+                    android:text="@string/Manager_card"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="20dp"
+                    android:text=">" />
             </LinearLayout>
 
             <LinearLayout
@@ -252,6 +285,7 @@
                 android:layout_height="8dp"
                 android:background="#e4e2e2" />
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -263,7 +297,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/weishop_about"
+                    android:text="@string/shop_level"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -295,7 +329,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/weishop_rule"
+                    android:text="@string/Main_category"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -327,7 +361,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/help_and_feedback"
+                    android:text="@string/Entity_store_address"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -359,7 +393,7 @@
                     android:layout_weight="3"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="@string/check_update"
+                    android:text="@string/consumer_hotline"
                     android:textAlignment="viewStart"
                     android:textSize="16sp" />
 
@@ -379,52 +413,6 @@
                 android:background="#e4e2e2">
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#00000000"
-                    android:padding="20dp"
-                    android:text="@string/Evaluation"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="20dp"
-                    android:text=">" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="#e4e2e2" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/log_out"
-                    android:textColor="@color/colorPrimary"
-                    android:background="#00000000"
-                    android:textAlignment="center"
-                    android:text="@string/sign_out"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="#e4e2e2" />
         </LinearLayout>
     </ScrollView>
-</RelativeLayout>
+</LinearLayout>

@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -36,6 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(getApplicationContext(),"登录成功",Toast.LENGTH_SHORT).show();
                     Intent next=new Intent(new Intent(LoginActivity.this, MainActivity.class));
                     editor.putString("user_id",phone_sum.getText().toString());
+                    editor.putInt("login_status",1);
                     editor.commit();
                     next.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(next);
@@ -46,6 +46,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Log.d("LoginActivity", "handle处理中.");
                     Toast.makeText(getApplicationContext(),"密码错误",Toast.LENGTH_SHORT).show();
                     password_sum.setText("");
+                    break;
+                case 2:
+                    Log.d("LoginActivity", "handle处理中.");
+                    Toast.makeText(getApplicationContext(),"此账户还未注册",Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     break;
@@ -184,7 +188,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(LoginActivity.this, ForgotPwdActivity.class));
                 break;
             case R.id.login_submit:
-                Snackbar.make(v,"qiang",Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(v,"qiang",Snackbar.LENGTH_SHORT).show();
                 Log.d("LoginActivity", "开始处理了");
                 PostThread postThreat= new PostThread(mHandler, 1, phone_sum.getText().toString(), password_sum.getText().toString(), local.getText().toString());
                 postThreat.start();

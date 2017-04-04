@@ -103,6 +103,9 @@
         <activity
             android:name=".MainNoteEditNoteActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ManagerInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

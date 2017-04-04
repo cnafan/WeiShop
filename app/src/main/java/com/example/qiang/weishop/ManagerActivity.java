@@ -1,10 +1,12 @@
 package com.example.qiang.weishop;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
@@ -21,19 +23,15 @@ public class ManagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
 
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
-        getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
-
-
         initial();
-
         textView_manager_user_id.setText(pref.getString("user_id", ""));
     }
 
     void initial(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
+        getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
 
         pref_default = getDefaultSharedPreferences(this);
         editor = getSharedPreferences("default", MODE_PRIVATE).edit();
@@ -52,4 +50,7 @@ public class ManagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void manager_user_click(View view) {
+        startActivity(new Intent(this,ManagerInfoActivity.class));
+    }
 }

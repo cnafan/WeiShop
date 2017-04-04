@@ -44,7 +44,12 @@ public class SplashActivity extends AppCompatActivity {
                     editor.commit();
                     startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
                 } else {
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    if (pref.getInt("login_status",0)==1) {
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    }
+                    else {
+                        startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
+                    }
                 }
                 //启动主Activity后销毁自身
                 finish();
