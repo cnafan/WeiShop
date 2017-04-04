@@ -97,8 +97,12 @@
         <activity
             android:name=".TaobaoMoveActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FragmentManagerNote" />
-        <activity android:name=".FragmentNoteHeadline"></activity>
+        <activity
+            android:name=".MainNoteAddNewNoteActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainNoteEditNoteActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

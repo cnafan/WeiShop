@@ -2,7 +2,6 @@ package com.example.qiang.weishop;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,8 +18,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.File;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
@@ -72,6 +69,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         phone_sum = (EditText) findViewById(R.id.phone_sum);
         password_sum = (EditText) findViewById(R.id.password_sum);
         button_login_submit = (Button) findViewById(R.id.login_submit);
+
+        pref_default = getDefaultSharedPreferences(this);
+        editor = getSharedPreferences("default", MODE_PRIVATE).edit();
+        pref = getSharedPreferences("default", MODE_PRIVATE);
     }
 
     @Override
@@ -84,9 +85,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
         getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
 
-        pref_default = getDefaultSharedPreferences(this);
-        editor = getSharedPreferences("default", MODE_PRIVATE).edit();
-        pref = getSharedPreferences("default", MODE_PRIVATE);
 
         initial();
 
@@ -161,53 +159,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textView_forgot.setClickable(true);
         textView_forgot.setOnClickListener(this);
 
-        //直接保存在默认内置存储内
-        //用Activity.openOrCreateDatabase实现
-
-        if (pref.getBoolean("isfirstinitcountry", true)) {
-            editor.putBoolean("isfirstinitcountry", false);
-            editor.apply();
-            String dirPath = "/data/data/" + this.getPackageName() + "/databases/";
-            File dir = new File(dirPath);
-            if (!dir.exists())
-                dir.mkdirs();
-            SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(dirPath + "country.db", null);
-            //创建表SQL语句
-            String stu_table = "CREATE TABLE IF NOT EXISTS countrytable(_id integer primary key autoincrement,type INTEGER,name text,count INTEGER)";
-            //执行SQL语句
-            db.execSQL(stu_table);
-
-            insert(db, "阿尔巴尼亚", 355);
-            insert(db, "阿尔及利亚", 213);
-            insert(db, "阿富汗", 93);
-            insert(db, "阿根廷", 54);
-            insert(db, "爱尔兰", 353);
-            insert(db, "埃及", 20);
-            insert(db, "埃塞俄比亚", 251);
-            insert(db, "爱沙尼亚", 372);
-            insert(db, "阿拉伯联合酋长国", 971);
-            insert(db, "巴巴多斯", 1246);
-            insert(db, "朝鲜", 1246);
-            insert(db, "赤道几内亚", 240);
-            insert(db, "秘鲁", 45);
-            insert(db, "加纳", 65);
-            insert(db, "加拿大", 84);
-            insert(db, "喀麦隆", 243);
-            insert(db, "马达加斯加", 706);
-            insert(db, "美国", 1);
-            insert(db, "日本", 81);
-            insert(db, "中国", 86);
-            insert(db, "中国澳门特别行政区", 853);
-            insert(db, "中国香港特别行政区", 852);
-        }
     }
 
-    private void insert(SQLiteDatabase db, String name, int count) {
-        //插入数据SQL语句
-        String insert_sql = "insert into countrytable(name,count) values('" + name + "'," + count + ")";
-        //执行SQL语句
-        db.execSQL(insert_sql);
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

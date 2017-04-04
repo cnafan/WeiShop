@@ -12,6 +12,7 @@
     <color name="blue">#3c70e5</color>
     <color name="split">#e4e2e2</color>
     <color name="bottom">#f9fafb</color>
+    <color name="bottom_dark">#ececec</color>
 
     <color name="statistics_bottom_button">#90c5dd</color>
     <color name="income_pannel">#fe453a</color>

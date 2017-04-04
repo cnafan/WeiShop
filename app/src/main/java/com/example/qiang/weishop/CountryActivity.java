@@ -20,7 +20,6 @@ import java.util.List;
 
 public class CountryActivity extends AppCompatActivity {
 
-
     private static final int NORMAL_ITEM = 0;
     private static final int GROUP_ITEM = 1;
 

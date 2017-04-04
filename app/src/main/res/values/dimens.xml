@@ -17,4 +17,8 @@
     <dimen name="order_top_button">16sp</dimen>
     <dimen name="order_split">10dp</dimen>
 
+    <dimen name="note_toolbar_textview_padding">5dp</dimen>
+    <dimen name="note_small_text">13sp</dimen>
+    <dimen name="note_large_text">18sp</dimen>
+
 </resources>

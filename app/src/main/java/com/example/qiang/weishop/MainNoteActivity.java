@@ -1,7 +1,6 @@
 package com.example.qiang.weishop;
 
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -34,7 +33,6 @@ public class MainNoteActivity extends AppCompatActivity implements View.OnClickL
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回
         getSupportActionBar().setDisplayShowTitleEnabled(false);//去掉原有标题
 
-
         textViewHeadline=(TextView)findViewById(R.id.weishop_headline);
         textViewManagernote=(TextView)findViewById(R.id.note_manager_note);
         textViewHeadline.setOnClickListener(this);
@@ -44,8 +42,8 @@ public class MainNoteActivity extends AppCompatActivity implements View.OnClickL
         fragmentNoteHeadline = new FragmentNoteHeadline();
 
         manager = getSupportFragmentManager();
-        manager.beginTransaction().add(fragment_manager_note, fragmentManagerNote).commit();
-        manager.beginTransaction().replace(R.id.fragment_headline, fragmentNoteHeadline).commit();
+        manager.beginTransaction().add(R.id.fragment_headline, fragmentNoteHeadline).commit();
+        manager.beginTransaction().replace(fragment_manager_note, fragmentManagerNote).commit();
 
     }
 
@@ -67,11 +65,9 @@ public class MainNoteActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.note_manager_note:
-                Snackbar.make(v,v+"",Snackbar.LENGTH_SHORT).show();
                 manager.beginTransaction().hide(fragmentNoteHeadline).show(fragmentManagerNote).commit();
                 break;
             case R.id.weishop_headline:
-                Snackbar.make(v,v+"",Snackbar.LENGTH_SHORT).show();
                 manager.beginTransaction().hide(fragmentManagerNote).show(fragmentNoteHeadline).commit();
                 break;
         }

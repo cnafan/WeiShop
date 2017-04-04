@@ -152,4 +152,14 @@
 
     <string name="Add_new_note">添加新笔记</string>
 
+    <string name="note_info">阅读 0\t\t赞 0</string>
+    <string name="copy">预览</string>
+    <string name="new_note">新笔记</string>
+    <string name="Please_fill_in_title">请填写标题</string>
+    <string name="Please_fill_in_the_contents">请填写内容</string>
+    <string name="release">发布</string>
+    <string name="edit_note">编辑笔记</string>
+<string name="complete">完成</string>
+
+    <string name="delete_note">删除笔记</string>
 </resources>
